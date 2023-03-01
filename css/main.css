@@ -1,0 +1,320 @@
+body{ 
+    font-family: 'Montserrat',sans-serif;
+    background-image: url(../images/background-for-laptops.jpg);
+    margin-top: 0 !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; 
+    width: 100%;
+    height: 100%;
+}
+@media only screen and (max-width: 767px) {
+    body {
+      background-image: url(../images/background-for-phones.jpg);
+
+    }
+      }
+::-webkit-scrollbar{
+    display: none;
+}
+/*start loader page*/
+.pre-loader{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    z-index:9999;
+    top:0;
+    color: #fff;
+    left:0;
+}
+.loader{
+    border: 0 solid transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+.loader::before, .loader::after{
+    content: "";
+    border: 1em solid #ff5733;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top:0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+
+.loader:before{
+    animation-delay: 0.5s;
+}
+@keyframes loader {
+      0%{
+          transform: scale(0);
+          opacity: 0;
+      }
+      50%{
+          opacity: 1;
+      }
+      100%{
+          transform:scale(1);
+          opacity: 0;
+      }
+}
+
+/*End loader page */
+
+
+
+
+
+
+
+.hide{
+    display: none;
+}
+*{
+    box-sizing: border-box !important;
+    outline: none !important;
+}
+
+.quiz-result-pages{
+    width: 40%;
+    margin: auto;
+}
+@media (max-width: 776px){ 
+    .quiz-result-pages{
+        width: 75%;
+        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.all-cards-page{
+    animation: fadeInRight 1s ease;
+}
+@keyframes fadeInRight{
+    0%{
+        transform: translateX(40px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+
+
+
+/*Start Home page*/
+
+.top-quiz-card-start{
+    border-radius: 10px;
+}
+@media (max-width: 776px){ 
+    .top-quiz-card-start{
+        margin-top: 90% !important;
+        width: 75% !important;
+    
+        
+        
+    }
+}
+.home-page .head-home-page{
+    font-size: 18px;
+    color: #000000;
+    font-weight: 500;
+    line-height: 25px;
+}
+.home-page .para-start-card{
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 22px;
+    color: #000000;
+    font-weight: 400;
+}
+.home-page .para-start-card .total-question{
+    font-weight:700;
+
+}
+.home-page  .start-quiz-btn{
+    background-color: #009688;
+    border-color: #009688;
+}
+/*End Home page */
+
+/*Start Choice page */
+.quiz-choices-page .top-choices-card{
+    border-radius: 10px;
+}
+.quiz-choices-page .head-quiz-page{
+    color: #009688;
+    font-weight: 600;
+    line-height: 25px;
+    padding-bottom: 10px;
+    border-bottom: solid #cccccc 1px;
+}
+.quiz-choices-page .para-quiz-card{
+    font-size: 22px;
+    color: #000000;
+    line-height: 28px;
+    font-weight: 400;
+    padding: 10px 0;
+    margin: 0;
+}
+.quiz-choices-page .para-quiz-card img{
+    max-width: 30%;
+    display: block;
+    margin-top: 15px;
+    margin: auto;
+}
+@media (max-width: 776px){ 
+    .quiz-choices-page .para-quiz-card img{
+        max-width: 30%;
+    }
+}
+
+.quiz-choices-page .quiz-choice-page-btn{
+    background-color: #009688;
+    border-color: #009688;
+}
+.quiz-choices-page .cohices .option{
+    background-color: #cccccc;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    opacity: 0;
+    animation: fadeIn 0.1s ease forwards;
+    overflow: hidden;
+    position: relative;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.quiz-choices-page .cohices .option.already-answered{
+    pointer-events: none;
+}
+.quiz-choices-page .cohices .option.correct{
+    color: #cccccc;
+}
+.quiz-choices-page .cohices .option.correct::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    color: #cccccc;
+    background-color: green;
+    z-index: -1;
+    animation: slideInLeft 0.5s ease forwards;
+
+}
+@keyframes slideInLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.quiz-choices-page .cohices .option.false{
+    color:#cccccc;
+}
+.quiz-choices-page .cohices .option.false::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    color: #cccccc;
+    background-color: red;
+    z-index: -1;
+    animation: slideInLeft 0.5s ease forwards;
+}
+@keyframes slideInLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.quiz-choices-page .quiz-choice-page-btn{
+    width: 30%;
+}
+@media (max-width: 576px){ 
+    .quiz-choices-page .quiz-choice-page-btn{
+        width: 50%;
+    }
+}
+.quiz-choices-page .answers-indicator{
+    border-top: solid #cccccc 1px;
+}
+.quiz-choices-page .answers-indicator .all-circle{
+    padding-top: 10px;
+    padding-left: 15px;
+}
+.quiz-choices-page .answers-indicator .circle-indicator{
+    height: 33px;
+    width: 33px;
+    display: inline-block;
+    background-color:#cccccc ;
+    border-radius: 50%;
+    margin-right: 9px;
+}
+.quiz-choices-page .answers-indicator .circle-indicator.correct{
+    background-color: green;
+    background-image: url("../images/correct.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position:center;
+
+}
+.quiz-choices-page .answers-indicator .circle-indicator.false{
+    background-color: red;
+    background-image: url("../images/wrong.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position:center;
+    
+}
+
+/*End choice page */
+
+/*Start Resuslts page */
+.reuslts-page .top-reuslts-card{
+ border-radius: 10px;   
+}
+
+.reuslts-page .top-reuslts-card .head-reuslts-page{
+    font: 900;
+    color: #009688;
+    font-weight: 900;
+}
+.reuslts-page .top-reuslts-card .reuslt-page-button .reuslt-page-btn{
+    background-color: #009688;
+    border-color: #009688;
+    
+}
+
+
+/*End results Page*/
